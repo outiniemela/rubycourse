@@ -1,0 +1,61 @@
+rails -v
+gem install rails
+mkdir projects
+cd projects
+rails new library
+cd library
+gedit Gemfile
+	gem 'therubyracer'
+	gem 'execjs'
+bundle install
+rails server
+http://0.0.0.0:3000/
+git --version
+git config --global user.name "Outi Niemela"
+git config --global user.email "ayelicia@hotmail.com"
+git init
+git status
+git add .
+git status
+git commit -m "initial rails 3 app"
+git status
+----
+eka exercise part 1
+gedit doc/README_FOR_APP
+git add doc/README_FOR_APP
+git commit -m "modified readme_for_app file in doc folder"
+eka exercise part 2
+git log
+git diff hash1..hash2
+q
+----
+ssh-keygen
+/home/student49/.ssh/id_rsa.pub
+copy to github account settings (ssh public keys)
+cd /projects/library
+git remote add origin git@github.com:outiniemela/rubycourse.git
+git push -u origin master
+rails generate
+rails generate controller Site index
+gedit config/routes.rb (muut rivit pois paitsi nämä)
+	Library::Application.routes.draw do
+  	  root :to => 'site#index'
+	end
+----
+toka exercise part 1
+tee hieman muutoksia index-sivuun
+toka ex part 2
+git status
+git add
+git status
+git rm public/index.html
+----
+rails server -p 8000 jos haluu toisen serverin pyörimään
+
+
+
+
+
+
+
+
