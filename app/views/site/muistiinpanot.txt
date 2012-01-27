@@ -52,10 +52,144 @@ git rm public/index.html
 ----
 rails server -p 8000 jos haluu toisen serverin pyörimään
 
+*****************************************
+edellisen/seuraavan tunnit koodit löytyy 
+githubista eficode rails-basic-> tags
+extract ja bundle install
+
+ruby
+cd projects/library
+rails console
+
+"abc"
+'abc'
+a="abc"
+a
+my_variable= "test"
+"abc".size
+"abc".upcase
+"abc".downcase
+"a is #{a,upcase}"
+
+gedit config/application.rb
+	config.autoload_paths+= %W(#{config.root}/lib)
+
+gedit lib/isbn_validator.rb
+save (uusi tiedosto)
+	class IsbnValidator
+	end
+
+rubyssa:
+reload!
+ctrl+D sulkee
+rails console
+IsbnValidator
+IsbnValidator.new
+String.new
+
+def initialize
+	puts "initializing"  	
+end
+
+reload!
+IsbnValidator.new
+IsbnValidator.new("gdfcf") -> wrong number of arguments
+
+v= IsbnValidator.new("1234")
+v.class
+v.isbn
+v.isbn=("4321")
+v.isbn
+v.isbn="5678"
+isbn= IsbnValidator.new "ABC"
+
+isbn.cleanup_isbn "sdf" ->no method error, koska private metodi
+
+2+3
+2*7
+7/0
+2.abs
+2.to_f
+3.14.to_i
+123.to_s
+:abc
+:abc.class
+"abc".class
+[1,2, 3.0, :sym]
+a[0]
+a[0]= :first
+a[4]= :five
+a
+a.size
+a << :new
+a
+[1,2] + [3,4,5]
+
+a= {:a => 1, :b => 2}
+sama kuin uusi ruby-versio:
+a= {:a 1, :b 2}
+a[:a]
+a[:b]
+/abc/
+/abc/.class (se on regexp)
+/abc/ =~ "abcd"
+antaa true
+/abc/ =~ "bedf"
+antaa nil
+nil.class
+antaa nilClass
+nil.nil?
+antaa true koska nil
+"abc".nil
+
+a=1
+if a==1
+puts "it is one"
+end
+
+puts "it is one" if a== 1
+
+if a==2
+1.9.2-p290 :087?>   puts "three"
+1.9.2-p290 :088?>   elseif a==3
+1.9.2-p290 :089?>   puts "two"
+1.9.2-p290 :090?>   else
+1.9.2-p290 :091 >     puts "ne on vaarinpain"
+1.9.2-p290 :092?>   end
+
+if a==1 || a==2
+puts "yep"
+end
+
+!true
+!false
+if a!=2
+puts "yep"
+end
+
+unless a==2 (sama kuin if not)
+puts "nope"
+end
+
+puts "nope" unless a==2
+
+a=1
+while a<5
+puts a
+a+= 1
+end
+
+IsbnValidator.valid_character?("c")
+
+3.times do
+puts "hello"
+end
+
+3.times do |i|
+puts "hello #{i}"
+end
+
+3.times {|i| puts "hello #{i}"}
 
 
-
-
-
-
-
+rubydoc.info
