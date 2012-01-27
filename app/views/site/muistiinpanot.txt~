@@ -181,5 +181,15 @@ end
 
 IsbnValidator.valid_character?("c")
 
+3.times do
+puts "hello"
+end
+
+3.times do |i|
+puts "hello #{i}"
+end
+
+3.times {|i| puts "hello #{i}"}
 
 
+rubydoc.info

@@ -191,5 +191,16 @@ end
 
 3.times {|i| puts "hello #{i}"}
 
+luo array
+
+a.each do |key, value|
+puts "key: #{key} value: #{value}"
+end
+
+a.map do |number|
+number* 2
+end
+
+
 
 rubydoc.info
