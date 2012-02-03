@@ -219,5 +219,13 @@ rake db:migrate
 rake test:units
 rails generate kertoo mitä eri osasia rails voi rakentaa automaattisesti
 rails generate model Book title:string authors:string description:text
+rake db:migrate
+rake -T db näyttää komennot mitkä vaikuttavat tietokantaan
+sqlite3 db/development.sqlite3
+.tables
+.schema books
+.quit
+googleta rails db migration mapping, saat kuvan, että rails tietää riippuen tietokannan tyypistä, minkä tietotyypin pistää (esim :timestamp on sekä timestamp että datetime)
 
+rails c
 
