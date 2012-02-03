@@ -7,28 +7,23 @@ class IsbnValidatorTest < ActiveSupport::TestCase
 #    assert false
 
   test "an ISBN with dashes is valid" do
-    v = IsbnValidator.new("951-98548-9-4")
-    assert v.valid?
+    assert IsbnValidator.new.valid?("951-98548-9-4")
   end
 
-  test "an ISBN with whitespaces is valid" do
-    v = IsbnValidator.new("95 1-98 54  8-9-4")
-    assert v.valid?
+  test "an ISBN with whitespace is valid" do
+    assert IsbnValidator.new.valid?("951 98548 9 4")
   end
-
-  test "an empty ISBN is not valid" do
-    v= IsbnValidator.new("")
-    assert !v.valid?
+  
+  test "an emptry string is not valid" do
+    assert !IsbnValidator.new.valid?("")
   end
-
-  test "an ISBN with letters other than x is not valid" do
-    v= IsbnValidator.new("9a1-98x48-9-4")
-    assert !v.valid?
+  
+  test "a string with letters other than x is not valid" do
+    assert !IsbnValidator.new.valid?("951-98548-9-p")
   end
-
-  test "an ISBN with more than 13 letters is not valid" do
-    v= IsbnValidator.new("951-98548-9-44")
-    assert !v.valid?
+  
+  test "a string with 14 digits is not valid" do
+    assert !IsbnValidator.new.valid?("12345678901234")
   end
 
 end

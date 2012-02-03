@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  authors: MyString
-  description: MyText
-
-two:
-  title: MyString
-  authors: MyString
-  description: MyText
+steppenwolf:
+  title: Steppenwolf
+  authors: Hermann Hesse
+  description: Some book
+  isbn: 951-98548-9-4

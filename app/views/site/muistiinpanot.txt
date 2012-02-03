@@ -228,4 +228,8 @@ sqlite3 db/development.sqlite3
 googleta rails db migration mapping, saat kuvan, että rails tietää riippuen tietokannan tyypistä, minkä tietotyypin pistää (esim :timestamp on sekä timestamp että datetime)
 
 rails c
+if you want to run single test file or multiple use ruby command like this:
+ruby -I"lib:test" test/unit/book_test.rb
+
+rails generate migration AddIsbnToBooks isbn:string (lisätään uusi columni tauluun)
 
