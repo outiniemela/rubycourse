@@ -204,3 +204,20 @@ end
 
 
 rubydoc.info
+
+
+
+
+
+
+----------------------------- session 3
+
+rake on taski, mitä voidaan tehdä.
+rake -T näyttää kaikki mahdolliset taskit/testit mitä voidaan tehdä
+rake test:units
+rake db:migrate
+rake test:units
+rails generate kertoo mitä eri osasia rails voi rakentaa automaattisesti
+rails generate model Book title:string authors:string description:text
+
+
