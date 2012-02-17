@@ -1,0 +1,248 @@
+rails -v
+gem install rails
+mkdir projects
+cd projects
+rails new library
+cd library
+gedit Gemfile
+	gem 'therubyracer'
+	gem 'execjs'
+bundle install
+rails server
+http://0.0.0.0:3000/
+git --version
+git config --global user.name "Outi Niemela"
+git config --global user.email "ayelicia@hotmail.com"
+git init
+git status
+git add .
+git status
+git commit -m "initial rails 3 app"
+git status
+----
+eka exercise part 1
+gedit doc/README_FOR_APP
+git add doc/README_FOR_APP
+git commit -m "modified readme_for_app file in doc folder"
+eka exercise part 2
+git log
+git diff hash1..hash2
+q
+----
+ssh-keygen
+/home/student49/.ssh/id_rsa.pub
+copy to github account settings (ssh public keys)
+cd /projects/library
+git remote add origin git@github.com:outiniemela/rubycourse.git
+git push -u origin master
+rails generate
+rails generate controller Site index
+gedit config/routes.rb (muut rivit pois paitsi nämä)
+	Library::Application.routes.draw do
+  	  root :to => 'site#index'
+	end
+----
+toka exercise part 1
+tee hieman muutoksia index-sivuun
+toka ex part 2
+git status
+git add
+git status
+git rm public/index.html
+----
+rails server -p 8000 jos haluu toisen serverin pyörimään
+
+*****************************************
+edellisen/seuraavan tunnit koodit löytyy 
+githubista eficode rails-basic-> tags
+extract ja bundle install
+
+ruby
+cd projects/library
+rails console
+
+"abc"
+'abc'
+a="abc"
+a
+my_variable= "test"
+"abc".size
+"abc".upcase
+"abc".downcase
+"a is #{a,upcase}"
+
+gedit config/application.rb
+	config.autoload_paths+= %W(#{config.root}/lib)
+
+gedit lib/isbn_validator.rb
+save (uusi tiedosto)
+	class IsbnValidator
+	end
+
+rubyssa:
+reload!
+ctrl+D sulkee
+rails console
+IsbnValidator
+IsbnValidator.new
+String.new
+
+def initialize
+	puts "initializing"  	
+end
+
+reload!
+IsbnValidator.new
+IsbnValidator.new("gdfcf") -> wrong number of arguments
+
+v= IsbnValidator.new("1234")
+v.class
+v.isbn
+v.isbn=("4321")
+v.isbn
+v.isbn="5678"
+isbn= IsbnValidator.new "ABC"
+
+isbn.cleanup_isbn "sdf" ->no method error, koska private metodi
+
+2+3
+2*7
+7/0
+2.abs
+2.to_f
+3.14.to_i
+123.to_s
+:abc
+:abc.class
+"abc".class
+[1,2, 3.0, :sym]
+a[0]
+a[0]= :first
+a[4]= :five
+a
+a.size
+a << :new
+a
+[1,2] + [3,4,5]
+
+a= {:a => 1, :b => 2}
+sama kuin uusi ruby-versio:
+a= {:a 1, :b 2}
+a[:a]
+a[:b]
+/abc/
+/abc/.class (se on regexp)
+/abc/ =~ "abcd"
+antaa true
+/abc/ =~ "bedf"
+antaa nil
+nil.class
+antaa nilClass
+nil.nil?
+antaa true koska nil
+"abc".nil
+
+a=1
+if a==1
+puts "it is one"
+end
+
+puts "it is one" if a== 1
+
+if a==2
+1.9.2-p290 :087?>   puts "three"
+1.9.2-p290 :088?>   elseif a==3
+1.9.2-p290 :089?>   puts "two"
+1.9.2-p290 :090?>   else
+1.9.2-p290 :091 >     puts "ne on vaarinpain"
+1.9.2-p290 :092?>   end
+
+if a==1 || a==2
+puts "yep"
+end
+
+!true
+!false
+if a!=2
+puts "yep"
+end
+
+unless a==2 (sama kuin if not)
+puts "nope"
+end
+
+puts "nope" unless a==2
+
+a=1
+while a<5
+puts a
+a+= 1
+end
+
+IsbnValidator.valid_character?("c")
+
+3.times do
+puts "hello"
+end
+
+3.times do |i|
+puts "hello #{i}"
+end
+
+3.times {|i| puts "hello #{i}"}
+
+luo array
+
+a.each do |key, value|
+puts "key: #{key} value: #{value}"
+end
+
+a.map do |number|
+number* 2
+end
+
+
+
+rubydoc.info
+
+
+
+
+
+
+----------------------------- session 3
+
+rake on taski, mitä voidaan tehdä.
+rake -T näyttää kaikki mahdolliset taskit/testit mitä voidaan tehdä
+rake test:units
+rake db:migrate
+rake test:units
+rails generate kertoo mitä eri osasia rails voi rakentaa automaattisesti
+rails generate model Book title:string authors:string description:text
+rake db:migrate
+rake -T db näyttää komennot mitkä vaikuttavat tietokantaan
+sqlite3 db/development.sqlite3
+.tables
+.schema books
+.quit
+googleta rails db migration mapping, saat kuvan, että rails tietää riippuen tietokannan tyypistä, minkä tietotyypin pistää (esim :timestamp on sekä timestamp että datetime)
+
+rails c
+if you want to run single test file or multiple use ruby command like this:
+ruby -I"lib:test" test/unit/book_test.rb
+
+rails generate migration AddIsbnToBooks isbn:string (lisätään uusi columni tauluun)
+
+
+
+
+
+
+
+------------------------------session 4
+rake db:fixtures:load
+rake routes
+rake test:functionals
+
+------------------------------session 5
+
