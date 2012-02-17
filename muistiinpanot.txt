@@ -234,15 +234,14 @@ ruby -I"lib:test" test/unit/book_test.rb
 rails generate migration AddIsbnToBooks isbn:string (lisätään uusi columni tauluun)
 
 
-
-
-
-
-
 ------------------------------session 4
 rake db:fixtures:load
 rake routes
 rake test:functionals
 
 ------------------------------session 5
+jos vahingossa tekee typon rails generatessa (esim. email->bmail)
+migrate-tiedostoon muutto
+rake db:rollback
+rake db:migrate
 
